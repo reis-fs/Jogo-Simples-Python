@@ -100,6 +100,7 @@ while jogando:
     if mana_jogador < 100:
         mana_jogador += 3
 
+    #define limite de mana
     if mana_jogador > 100:
         mana_jogador = 100
 
