@@ -11,8 +11,11 @@ vida_inimigo = 50
 
 #número de inimigos
 n = int(input("Digite a quantidade de inimigos: "))
+
+#verifica se a quantidade de inimigos é maior que zero
+#se for menor que zero, o jogo exibirá uma mensagem de erro e será fechado
 if n <= 0:
-    print("Digite um valor acima de 0.")
+    print("Erro, a quantia de inimigos precisa ser maior que 0!")
     exit()
 
 #vetor para armazenar os inimigos
@@ -70,6 +73,8 @@ while jogando:
         else:
             #mostramos ao jogador que não pode se curar
             print("Mana insuficiente!")
+
+    #se o jogador escolher uma opção diferente de 1 e 2, o jogo exibe uma mensagem de erro e fecha
     else:
         print("Erro, escolha entre os valores 1 para atacar ou 2 para curar.")
         exit()
