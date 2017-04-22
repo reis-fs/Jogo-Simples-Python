@@ -11,6 +11,9 @@ vida_inimigo = 50
 
 #número de inimigos
 n = int(input("Digite a quantidade de inimigos: "))
+if n <= 0:
+    print("Digite um valor acima de 0.")
+    exit()
 
 #vetor para armazenar os inimigos
 inimigos =[]
@@ -24,9 +27,11 @@ jogando = True
 while jogando:
     print("Vida:", vida_jogador)
     print("Mana:", mana_jogador)
+    print("")
 
     #jogador escolque o que fazer
     escolha = int(input("Deseja atacar (1) ou curar (2): "))
+    print("")
 
     #se escolher atacar
     if escolha == 1:
@@ -49,7 +54,7 @@ while jogando:
             inimigos.remove(selecionado)
 
     #se escolher curar
-    if escolha == 2:
+    elif escolha == 2:
         #cura só é possivel quando maior que dez
         if vida_jogador >= 10:
             #cura aleatória
@@ -65,6 +70,9 @@ while jogando:
         else:
             #mostramos ao jogador que não pode se curar
             print("Mana insuficiente!")
+    else:
+        print("Erro, escolha entre os valores 1 para atacar ou 2 para curar.")
+        exit()
 
     #vez dos inimigos atacarem
     for inimigo in inimigos:
